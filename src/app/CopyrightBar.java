@@ -8,13 +8,12 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseMotionAdapter;
 import java.util.StringTokenizer;
 
 final class CopyrightBar
-		extends Component
-		implements MouseListener, MouseMotionListener
+		extends Component, MouseAdapter, MouseMotionAdapter
 {
 	private static final long serialVersionUID = 3368879434278379489L;
 
@@ -24,11 +23,6 @@ final class CopyrightBar
 	private static Color backColour = new Color(0x00307A);
 	private static Color textColour = new Color(0xFFFFFF);
 	private static Color linkColour = new Color(0xFFD200);
-
-	@Override
-	public final void mouseDragged(MouseEvent e)
-	{
-	}
 
 	@Override
 	public final void mousePressed(MouseEvent e)
@@ -83,16 +77,6 @@ final class CopyrightBar
 
 			k += textHeight;
 		}
-	}
-
-	@Override
-	public final void mouseClicked(MouseEvent e)
-	{
-	}
-
-	@Override
-	public final void mouseReleased(MouseEvent e)
-	{
 	}
 
 	private void parseMessage(String message)
@@ -151,15 +135,6 @@ final class CopyrightBar
 		}
 	}
 
-	@Override
-	public final void mouseEntered(MouseEvent e)
-	{
-	}
-
-	@Override
-	public final void mouseExited(MouseEvent e)
-	{
-	}
 
 	@Override
 	public final void mouseMoved(MouseEvent e)
